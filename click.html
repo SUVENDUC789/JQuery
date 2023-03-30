@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click event</title>
+    <style>
+        .container{
+            color: red;
+            background-color: pink;
+            border: 2px solid black;
+            padding: 10px;
+            padding-bottom: 50px;
+            padding-left: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I am a Boy</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quibusdam sit modi doloremque provident saepe fugit consectetur, alias, quo nesciunt quod optio libero ipsa quae repellat exercitationem, tempora obcaecati! Sit!
+        </p>
+    </div>
+</body>
+
+<script src="/js/jquery-3.6.3.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $(".container").click(function(){
+            $(".container").css("background-color","green");
+        });
+
+        $(".container").dblclick(function(){
+            $(".container").css("background-color","orange");
+        });
+
+        $(".container").contextmenu(function(){
+            $(".container").css("background-color","blue");
+        });
+
+        $(".container").mouseenter(function(){
+            $(".container").css("background-color","tan");
+        });
+
+        $(".container").mouseleave(function(){
+            $(".container").css("background-color","red");
+        });
+
+    });
+
+</script>
+</html>
