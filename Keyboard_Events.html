@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+
+<body>
+    <center>
+        <h1>Keyboard Events</h1>
+    </center>
+</body>
+
+<script src="/js/jquery-3.6.3.min.js"></script>
+
+<script>
+    $(document).ready(() => {
+        console.log("I am ready to write jquery.");
+        $('body').keypress(function () {
+            $(this).css('background-color', 'red');
+        });
+
+        $('body').keyup(function(){
+            $(this).css("background-color","green");
+        });
+    });
+</script>
+
+</html>
