@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Methods in Jquery</title>
+    <style>
+        .box {
+            padding-top: 100px;
+            height: 400px;
+            width: 500px;
+            color: white;
+            background: black;
+            border: 5px solid blueviolet;
+            overflow: auto;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Mini Form</h1>
+        <form id="myform" action="post">
+            <input type="text" name="fname" id="fname" placeholder="Enter your first name "> <br>
+            <input type="text" name="lname" id="lname" placeholder="Enter your last name "> <br>
+            <input type="submit">
+        </form>
+        <h1>Get Methods in Jquery</h1>
+        <div class="box" id="suv">
+            <p> Lorem ipsum dolor <i>sit amet consectetur</i> adipisicing elit. <u>Ratione</u>, nostrum!</p>
+        </div>
+    </center>
+</body>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        console.log("Get Methods in jquery");
+
+        let a = $("center").html();
+        // console.log(a);
+
+        a = $(".box").text();
+        // console.log(a);
+
+        a = $('.box').attr("id");
+        // console.log(a);
+
+        $("#myform").submit(function(e){
+            // console.log(e);
+            e.preventDefault();
+            let first_name=$("#fname").val();
+            let last_name=$("#lname").val();
+            alert("Welcome to my website : "+first_name+" "+last_name)
+            console.log("Are you want to submit...");
+        });
+    });
+
+</script>
+
+</html>
