@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up here</title>
+</head>
+
+<body>
+    <center>
+        <div class="sign-up-form">
+            <div class="alert"></div>
+            <h1>Sign up here</h1>
+            <!-- <form> -->
+            <input type="text" name="uname" id="uname" placeholder="Enter your unique name ">
+            <div class="error"></div>
+
+            <input type="password" name="pass1" id="pass1" placeholder="Enter your password">
+            <ul type="circle">
+                <li><span id="check-length" style="color: red;">Password length minimum 8.(required)</span></li>
+            </ul>
+
+            <input type="password" name="pass2" id="pass2" placeholder="Enter your confirm password">
+            <br>
+            <br>
+            <button id="submit">Create</button>
+            <!-- </form> -->
+        </div>
+    </center>
+</body>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $("#submit").on("click", function (e) {
+            let uname = $("#uname").val();
+            let pass1 = $("#pass1").val();
+            let pass2 = $("#pass2").val();
+
+            if (uname.length < 8) {
+                $(".error").html("Username Minimum 8 character (Required)");
+                $(".error").css("color", "red");
+                // alert("Please choice name minimum 8 character...");
+            }
+            if (pass1 != pass2) {
+                $(".alert").html("Password and confrim password both are not same.");
+                $(".alert").css("color", "red");
+            }
+        });
+        // function passLength() {
+
+        $("#pass1").keypress(function () {
+            let pass1 = $(this).val();
+            if (pass1.length >= 8) {
+                
+                $("#check-length").html("Now password is strong.");
+                $("#check-length").css("color", "green");
+            } else if (pass1.length < 8) {
+                $("#check-length").html("Password length minimum 8.(required)");
+                $("#check-length").css("color", "red");
+            }
+        });
+        // }
+
+        // passLength();
+
+        // $(document).on('keydown', function (e) {
+        //     if (e.which === 8 || e.keyCode === 8) {
+        //         // console.log('backspace key pressed');
+        //         passLength();
+        //     }
+        // });
+
+    });
+
+</script>
+
+</html>
