@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Methods</title>
+    <style>
+        .container {
+            border: 4px solid goldenrod;
+            margin-top: 50px;
+            padding: 25px;
+            color: white;
+            background: #666161;
+        }
+
+        body {
+            background: gainsboro;
+        }
+
+        #click {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+            font-style: italic;
+
+            color: rgb(0, 0, 0);
+
+            border: 2px solid yellow;
+
+
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>This is Heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae reiciendis corporis, optio voluptatum libero
+            laborum magni quod dolore eveniet atque enim, nostrum molestiae minus natus molestias? Cumque itaque quidem
+            adipisci!</p>
+
+        <button id="click">Change</button>
+    </div>
+
+
+    <div class="container">
+        <form>
+            <label for="name"><b>Name </b></label><input type="text" name="name" id="name">
+            <hr>
+            <label for="class"><b>Class </b></label><input type="text" name="class" id="class">
+            <hr>
+            <button id="nothink">O Yea</button>
+        </form>
+    </div>
+
+
+
+</body>
+
+<script src="js/jquery-3.6.3.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $("#click").click(function () {
+            $(".container h1").text("I am Suvendu Chowdhury");
+            $("p").html("I am a passionate <h3>Python</h3> coder, but who has a good command in <h4>Javascript, JQuery,Servlets and JSP, Spring Framework, MongoDB</h4> Also I am a student")
+            $(".container h1 ").attr("class", "red");
+
+        });
+        $("#name").val("Suvendu Chowdhury");
+        $("#class").val("Bsc. Computer Science");
+
+        $("form").submit(function(e){
+            e.preventDefault();
+        });
+    });
+
+</script>
+
+</html>
