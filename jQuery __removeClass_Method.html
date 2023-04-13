@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery addClass & removeClass Method</title>
+
+    <style>
+
+        .container{
+            border: 2px solid black;
+            padding: 40px;
+            margin: 20px;
+        }
+        .red{
+           background:black;
+           color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery addClass & removeClass Method</h1>
+    <div class="container ">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repellat quisquam odit excepturi laborum sint
+            aperiam perspiciatis expedita pariatur eveniet!</p>
+    </div>
+    <button id="red">Add class</button>
+    <hr>
+    <button id="removeclass">Remove class</button>
+    <hr>
+    <button id="toggle">Toggle</button>
+</body>
+
+<script src="js/jquery-3.6.3.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#red").click(function(){
+            console.log("click");
+            $(".container").addClass("red");
+        });
+
+        $("#removeclass").click(function(){
+            $(".container").removeClass("red");
+        });
+
+
+        $("#toggle").click(function(){
+            $(".container").toggleClass("red");
+        });
+    });
+
+</script>
+
+</html>
