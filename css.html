@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery CSS Method</title>
+
+    <style>
+        .box {
+            border: 4px dotted black;
+            padding: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>jQuery CSS Method</h1>
+    <div class="box">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, delectus cum voluptatibus mollitia ut
+            inventore architecto tempore vel amet minima.</p>
+    </div>
+
+    <button id="mycss">Add css</button>
+    <!-- <button id="toggle">Change</button> -->
+
+</body>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $("#mycss").click(function () {
+            $(".box").css({
+                "background": "pink",
+                "color": "red",
+                "border": "5px solid green",
+            });
+        });
+
+        // $("#toggle").click(function () {
+        //     $(".box").toggleClass(function () {
+        //         $(".box2").css({
+        //             "background": "pink",
+        //             "color": "red",
+        //             "border": "5px solid green",
+        //         });
+        //     });
+        // });
+
+    });
+</script>
+
+</html>
