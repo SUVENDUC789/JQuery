@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> On & Off Method</title>
+
+    <style>
+        .box {
+            border: 4px dotted black;
+            padding: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>On & Off Method</h1>
+    <div class="box">
+        <h1>Lorem ipsum dolor sit.</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias porro soluta nam eveniet ad, et ducimus?
+            Maiores quo qui at.</p>
+    </div>
+
+    <button id="re">Remove Event</button>
+
+</body>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $(".box").on({
+            "click": function () {
+                $(".box").css({
+                    "background": "pink",
+                    "color": "red"
+                });
+            },
+
+            "mouseenter": function () {
+                $(".box").css({
+                    "background": "green",
+                    "color": "white"
+                });
+            },
+
+            "mousedown": function () {
+                $(".box").css({
+                    "background": "tan",
+                    "color": "white"
+                });
+            }
+        });
+
+        $("#re").click(function () {
+            $(".box").off("mouseenter mousedown");
+        });
+    });
+
+</script>
+
+</html>
