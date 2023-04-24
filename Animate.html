@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <style>
+        .box {
+            color: red;
+            background: yellow;
+            padding: 20px;
+            position: relative;
+            font-size: large;
+            border: 5px dotted tan;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Animate</h1>
+    <button class="btn">Animate</button>
+    <span class="box">I am Iron Man</span>
+
+
+
+</body>
+
+<script src="js/jquery-3.6.3.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $(".btn").click(function () {
+            $(".box").animate({ left: "150px" }, "slow", function () {
+                $(this).css({
+                    color: "white",
+                    background: "black"
+                });
+                console.log("this is Animate Queue...");
+            });
+            $(".box").animate({ top: "150px" }, "slow", function () {
+                $(this).css({
+                    color: "black",
+                    background: "white"
+                });
+                console.log("this is Animate Queue...");
+            });
+            $(".box").animate({ left: "350px" }, "slow", function () {
+                $(this).mouseenter(function () {
+                    $(this).css({
+                        left:"0px",
+                        top:"0px"
+                    });
+
+                    console.log("Mouse enter...");
+                });
+                console.log("this is Animate Queue...");
+            });
+        });
+    });
+
+</script>
+
+</html>
