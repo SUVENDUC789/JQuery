@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Show & Toggle</title>
+    <style>
+        .box {
+            color: rgb(144, 60, 60);
+            background: #dfc5c5;
+            padding: 40px;
+            border: 4px dotted tomato;
+            margin: 20px;
+        }
+
+        .button{
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hide Show & Toggle</h1>
+    <div class="box">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit quisquam aspernatur labore exercitationem
+            cupiditate minus similique cum placeat hic perferendis aut commodi necessitatibus nobis a accusantium, esse
+            minima dolore. Ex?</p>
+    </div>
+    <div class="button">
+        <button id="hideBtn">Hide</button>
+        <button id="showBtn">Show</button>
+        <button id="toogleBtn">Toogle</button>
+    </div>
+</body>
+
+<script src="js/jquery-3.6.3.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#hideBtn").click(function(){
+            $(".box").hide("slow");
+        });
+
+        $("#showBtn").click(function(){
+            $(".box").show("slow");
+        });
+
+        $("#toogleBtn").click(function(){
+            $(".box").toggle(1000,function(){
+                console.log("Toggle");
+            });
+        });
+    });
+</script>
+
+</html>

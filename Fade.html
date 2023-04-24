@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fadeIn, fadeOut, fadeToggle, fadeTo</title>
+    <style>
+        .box {
+            color: antiquewhite;
+            background: teal;
+            padding: 40px;
+            border: 4px dotted tan;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>fadeIn, fadeOut, fadeToggle, fadeTo</h1>
+    <div class="box">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis similique perspiciatis hic voluptates.
+            Nihil dicta harum saepe possimus molestiae odio fugit ratione quaerat alias! Qui, minima. Commodi possimus
+            quos in.</p>
+    </div>
+
+    <div class="button-fade">
+        <button id="fade-in">Fade in</button>
+        <button id="fade-out">Fade Out</button>
+        <button id="fade-toggle">Fade Toggle</button>
+        <button id="fade-to">Fade To</button>
+    </div>
+
+</body>
+
+<script src="js/jquery-3.6.3.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#fade-in").click(function () {
+            $(".box").fadeIn(2000,function(){
+                console.log("Opacity Show...");
+            });
+        });
+
+        $("#fade-out").click(function () {
+            $(".box").fadeOut(2000,function(){
+                console.log("Opacity Hide ...");
+            });
+        });
+
+        $("#fade-toggle").click(function(){
+            $(".box").fadeToggle(2000,function(){
+                console.log("Opacity Toggle ...");
+            });
+        });
+
+        $("#fade-to").click(function(){
+            $(".box").fadeTo("slow",0.5,function(){
+                console.log("Fade to...");
+            });
+        });
+
+    });
+</script>
+
+</html>

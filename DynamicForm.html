@@ -1,43 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Form</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .box {
+      background-color: aqua;
+      padding: 40px;
+      margin: 20px;
+      border: 4px dotted tan;
+    }
 
-    <title>Dynamic Form</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="card text-center">
-            <div class="card-header">
-              Featured
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-            <div class="card-footer text-muted">
-              2 days ago
-            </div>
-          </div><div class="card text-center">
-            <div class="card-header">
-              Featured
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-            <div class="card-footer text-muted">
-              2 days ago
-            </div>
-          </div>
+    .submit-data {
+      padding: 10px;
+      border: 2px dotted tan;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Dynamic Form</h1>
+  <div class="box">
+    <h2>Dynamic Form</h2>
+    <input type="number" name="number" id="number" placeholder="Enter Number Of student ">
+    <input type="submit" value="Add Data" id="add">
+    <div class="student-details"></div>
+  </div>
+  <center>
+    <div class="submit-data">
+      <button id="final">Submit</button>
     </div>
+  </center>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+  crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(function () {
+    // console.log("Start...");
+
+    $("#add").click(function (e) {
+      e.preventDefault();
+      let n = $("#number").val();
+
+      for (let i = 0; i < n; i++) {
+        $(".student-details").append(`<hr><input type="text" name="name${i + 1}" placeholder="Enter ${i + 1}th students name"> <hr>`);
+      }
+
+      // console.log(n);
+    });
+
+    $("#final").click(function () {
+      alert("Please Connect Any Backend ! ")
+    });
+  });
+</script>
+
 </html>

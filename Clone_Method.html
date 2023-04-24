@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone Method</title>
+    <style>
+        .box{
+            padding: 40px;
+            border: 4px solid tan;
+            background-color: aquamarine;
+            margin: 10px;
+        }
+        .box2{
+            padding: 40px;
+            border: 4px dotted green;
+            background-color: rgb(241, 194, 194);
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clone Method</h1>
+    <div class="box">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit neque ipsum ex optio placeat cum quia tempore, temporibus deserunt sint ducimus totam eius eaque, ratione sequi distinctio consequatur sed vel!</p>
+    </div>
+
+    <div class="box2">
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <button id="clone">Clone</button>
+
+</body>
+<script src="js/jquery-3.6.3.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        $("#clone").click(function(){
+            console.log($(".box h2").clone());
+            $(".box h2").clone().prependTo(".box2");
+        });
+
+    });
+</script>
+
+
+</html>
