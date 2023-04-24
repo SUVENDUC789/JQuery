@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideUp , slideDown & SlideToggle</title>
+    <style>
+        .box {
+            color: antiquewhite;
+            background: teal;
+            padding: 40px;
+            border: 4px dotted tan;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>slideUp , slideDown & SlideToggle</h1>
+    <div class="box">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis similique perspiciatis hic voluptates.
+            Nihil dicta harum saepe possimus molestiae odio fugit ratione quaerat alias! Qui, minima. Commodi possimus
+            quos in.</p>
+    </div>
+
+    <div class="button-fade">
+        <button id="slide-up">Slide Up</button>
+        <button id="slide-down">Slide Down</button>
+        <button id="slide-toggle">Slide Tooggle</button>
+    </div>
+
+</body>
+
+<script src="js/jquery-3.6.3.min.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+
+        $("#slide-up").click(function(){
+            $(".box").slideUp("slow",function(){
+                console.log("Slide up...");
+            });
+        });
+
+        $("#slide-down").click(function(){
+            $(".box").slideDown("slow",function(){
+                console.log("Slide down...");
+            });
+        });
+
+        $("#slide-toggle").click(function(){
+            $(".box").slideToggle("slow",function(){
+                console.log("Slide toggle...");
+            });
+        });
+
+    });
+</script>
+
+
+</html>
