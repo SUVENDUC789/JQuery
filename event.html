@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery pageX & pageY</title>
+
+    <style>
+        .result {
+            background: rgb(206, 176, 235);
+            padding: 60pt;
+            border: 4px solid black;
+        }
+
+        .box {
+            height: 50px;
+            width: 50px;
+            background-color: yellow;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="result">
+    </div>
+
+    <div class="box"></div>
+</body>
+
+<script src="js/jquery-3.6.3.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $(document).mousemove(function (event) {
+            $(".result").text(`(X : ${event.pageX} , Y : ${event.pageY})`);
+            $(".box").offset({ top: event.pageY, left: event.pageX });
+        });
+    });
+
+</script>
+
+</html>
